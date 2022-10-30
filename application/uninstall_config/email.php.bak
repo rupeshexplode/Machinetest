@@ -1,0 +1,9 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$CI=& get_instance();
+$CI->load->database();
+
+$config['protocol']  =$CI->db->get_where('general_settings', array('type' => 'mail_status'))->row()->value;
+$config['mailtype']  ='html';
+

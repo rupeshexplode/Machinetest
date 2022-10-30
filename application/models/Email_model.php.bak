@@ -1,0 +1,55 @@
+<?php
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+
+
+class Email_model extends CI_Model
+{
+    function __construct()
+    {
+        parent::__construct();
+    }
+   
+    
+  
+    
+
+        if (!empty($smtp_host)) {
+
+            $config['smtp_host'] = $smtp_host;
+            $flag_count++; // 1
+
+        }
+
+        if (!empty($smtp_port)) {
+
+            $config['smtp_port'] = $smtp_port;
+            $flag_count++; // 2
+
+        }
+
+        if (!empty($smtp_user)) {
+
+            $config['smtp_user'] = $smtp_user;
+            $flag_count++; // 3
+
+        }
+
+        if (!empty($smtp_pass)) {
+
+            $config['smtp_pass'] = $smtp_pass;
+            $flag_count++; // 4
+
+        }
+
+        if ($flag_count < 4) {
+            $config = array();
+        }
+
+        return $config;
+    }
+
+
+
+
